@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333030;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 3px;
+    /*background-color: #1e9114;*/
+    background-color: hsl(0,0%,90%);
+    /*-webkit-box-shadow: 0 9px 12px #0e0e23;
+    -moz-box-shadow: 0 9px 12px #0e0e23;
+    box-shadow: 0 9px 12px #0e0e23;*/
+}
+
+header .head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.head .logo img {
+    width: 135px;
+    animation: turn 6s linear infinite;
+}
+
+.heading h1 {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+
+
+
+@keyframes turn {
+    0% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #333030, 0 0 40px #333030, 0 0 50px #333030, 0 0 60px #333030, 0 0 70px #333030;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #000, 0 0 30px hsl(0,0%,90%), 0 0 40px hsl(0,0%,90%), 0 0 50px hsl(0,0%,90%), 0 0 60px hsl(0,0%,90%), 0 0 70px hsl(0,0%,90%), 0 0 80px hsl(0,0%,90%);
+  }
+}
