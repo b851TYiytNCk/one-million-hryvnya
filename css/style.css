@@ -137,12 +137,14 @@ header .head {
     max-width: 1000px;
     height: 1000px;
     max-height: 1000px;
+    margin: 30px auto;
 } 
 
 .item {
     border: 1px solid black;
     width: 10px;
     height: 10px;
+    background-color: #fff;
 }
 
 
