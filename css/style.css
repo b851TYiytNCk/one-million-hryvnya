@@ -7,7 +7,20 @@
 body {
     background-color: #333030;
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding-top: 100px;
 }
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* HEADER HEADER HEADER */
+/* HEADER HEADER HEADER */
+/* HEADER HEADER HEADER */
+
 
 .main header {
     display: flex;
@@ -41,15 +54,101 @@ header .head {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-
-
-
-.nav ul {
+.nav-features ul {
     list-style: none;
     display: flex;
 }
 
+/* HEADER END HEADER END HEADER END */
+/* HEADER END HEADER END HEADER END */
+/* HEADER END HEADER END HEADER END */
 
+
+/* NAV NAV NAV */
+/* NAV NAV NAV */
+/* NAV NAV NAV */
+
+
+.link-section {
+    width: 100%;
+    height: 60px;
+    background-color: #262626;
+    border-bottom: 3px solid #88ce02;
+}
+
+.nav-links {
+    height: 100%;
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    /*justify-content: space-around;*/
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.nav-links ul li {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 165px;    
+    min-width: 110px;
+    padding: 0 25px;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: .9em;
+}
+
+.nav-links ul li:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.nav-links ul li:hover a {
+    color: #000;
+}
+
+.nav-links ul li a, .nav-links ul li {
+    transition: all .2s ease;
+}
+
+/* NAV END NAV END NAV END */
+/* NAV END NAV END NAV END */
+/* NAV END NAV END NAV END */
+
+/* GRID GRID GRID */
+/* GRID GRID GRID */
+/* GRID GRID GRID */
+
+.content .grid {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    height: 1000px;
+    max-height: 1000px;
+} 
+
+.item {
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+}
+
+
+/* GRID END GRID END GRID END */
+/* GRID END GRID END GRID END */
+/* GRID END GRID END GRID END */
 
 
 @keyframes turn {
@@ -60,10 +159,10 @@ header .head {
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #333030, 0 0 40px #333030, 0 0 50px #333030, 0 0 60px #333030, 0 0 70px #333030;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #333030,
+     0 0 40px #333030, 0 0 50px #333030, 0 0 60px #333030;
   }
   
   to {
-    text-shadow: 0 0 20px #000, 0 0 30px hsl(0,0%,90%), 0 0 40px hsl(0,0%,90%), 0 0 50px hsl(0,0%,90%), 0 0 60px hsl(0,0%,90%), 0 0 70px hsl(0,0%,90%), 0 0 80px hsl(0,0%,90%);
-  }
+    text-shadow: 0 0 20px #000, 0 0 30px hsl(0,0%,90%), 0 0 40px hsl(0,0%,90%), 0 0 50px hsl(0,0%,90%), 0 0 60px hsl(0,0%,90%); }
 }
