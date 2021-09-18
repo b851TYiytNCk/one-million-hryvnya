@@ -131,20 +131,31 @@ header .head {
 /* GRID GRID GRID */
 
 .content .grid {
-    width: 1000px;
+/*    width: 1000px;
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
     height: 1000px;
     max-height: 1000px;
-    margin: 30px auto;
+    margin: 30px auto;*/
 } 
 
 .item {
-    border: 1px solid black;
+/*    border: 1px solid black;
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: #fff;*/
+}
+
+.grid {
+  border-collapse: collapse;
+  margin: 30px auto;
+}
+
+.grid td {
+  border: 1px solid #ccc;
+  width: 10px;
+  height: 10px;
 }
 
 
