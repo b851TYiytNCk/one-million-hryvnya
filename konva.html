@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+    <body bgcolor="#333030">
+        <div style="margin: 30px auto; width: 1000px; height: 1000px;" id="container"></div>
+        <script>
+        	
+        	let stage = new Konva.Stage({
+        		width: 1000,
+        		height: 1000,
+        		container: 'container'
+        	})
+
+        	let cellLayer = new Konva.Layer(),
+
+        	coordX = 0,
+        	coordY = 0;
+
+        	for (let i = 0; i <= 10000; i++) {
+
+        		let rect = new Konva.Rect({
+        			width: 9.8,
+        			height: 9.8,
+        			x: coordX,
+        			y: coordY,
+        			color: 'transparent',
+        			strokeWidth: 0.1,
+        			stroke: 'white'
+        		});
+
+        		coordX += 10;
+
+        		if ( !(i % 100) && i > 0) {
+        			coordX = 0;
+        			coordY += 10;
+        		}
+
+        		cellLayer.add(rect);
+
+        	}
+
+        	stage.add(cellLayer);
+        	
+        	let selectLayer = new Konva.Layer();
+			stage.add(selectLayer);
+
+        	let range = [],
+        	isPressed = false,
+        	selectRect;
+
+        	const mathSort = (a, b) => a - b;
+
+    		stage.content.addEventListener('mousedown', (e)=> {
+    			range = [];
+    			//selectLayer.removeChildren();
+    			isPressed = true;
+    			range.push([e.offsetX, e.offsetY]);
+    		});
+
+
+
+    		stage.content.addEventListener('mousemove', (e)=> {
+				range[1] = [];
+				if (isPressed) {
+					range[1] = [e.offsetX, e.offsetY];
+					//console.log(range);
+
+					const [col1, col2] = [range[0][0], range[1][0]].sort(mathSort),     // возьмем X-координаты по возрастанию их значений
+	            	[row1, row2] = [range[0][1], range[1][1]].sort(mathSort);       // и Y-координаты аналогично
+	            	console.log([col1, col2] + " " + [row1, row2]);
+	        		selectRect = new Konva.Rect({
+	        			width: Math.round( ( Math.max(col1, col2) - Math.min(col1, col2)) / 10) * 10,
+	        			height: Math.round( ( Math.max(row1, row2) - Math.min(row1, row2)) / 10) * 10,
+	        			x: Math.round(Math.min(col1, col2) / 10) * 10,
+	        			y: Math.round(Math.min(row1, row2) / 10) * 10,
+	        			fill: '#6695c4',
+	        			opacity: 0.3
+	        		});
+
+	        		console.log(selectRect);
+	        		selectLayer.removeChildren();
+	        		selectLayer.add(selectRect);
+	        		stage.content.addEventListener('mouseup', (e)=> {
+	        			isPressed = false;
+	        		});
+
+        		}
+    		});
+        
+
+        </script>
+    </body>
+</html>
